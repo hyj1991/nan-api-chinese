@@ -3,7 +3,7 @@
 <a name="api_nan_function_callback_info"></a>
 ### Nan::FunctionCallbackInfo
 
-`Nan::FunctionCallbackInfo` 用于替换v8引擎原生的API：[`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html), 即使是在一些比较老的连 `v8::FunctionCallbackInfo` 都不存在的v8引擎版本中我们也必须替换使用。
+`Nan::FunctionCallbackInfo` 用于替换v8引擎原生的API：[`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html), 即使是在一些比较老的连 `v8::FunctionCallbackInfo`这个API都不存在的v8引擎版本中我们也必须替换使用。
 
 定义:
 
@@ -22,14 +22,14 @@ template<typename T> class FunctionCallbackInfo {
 };
 ```
 
-可以看[`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html) v8的官方文档 来获取更多的使用细节. 查看[`Nan::ReturnValue`](#api_nan_return_value) 来获取更多从如何在使用NAN编写C++插件中的函数返回数据给JS层的一些使用信息。
+查看[`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html) v8的官方文档 来获取更多的使用细节. 查看[`Nan::ReturnValue`](#api_nan_return_value) 来获取更多从如何在使用NAN编写C++插件中的函数返回数据给JS层的一些使用信息。
 
 <a name="api_nan_property_callback_info"></a>
 ### Nan::PropertyCallbackInfo
 
-`Nan::PropertyCallbackInfo` should be used in place of [`v8::PropertyCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/d7/dc5/classv8_1_1_property_callback_info.html), even with older versions of Node where `v8::PropertyCallbackInfo` does not exist.
+`Nan::PropertyCallbackInfo` 用来替换 [`v8::PropertyCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/d7/dc5/classv8_1_1_property_callback_info.html), 即使是在一些比较老的连`v8::PropertyCallbackInfo`这个API都不存在的版本中我们也必须替换使用。
 
-Definition:
+定义:
 
 ```c++
 template<typename T> class PropertyCallbackInfo : public PropertyCallbackInfoBase<T> {
@@ -42,7 +42,7 @@ template<typename T> class PropertyCallbackInfo : public PropertyCallbackInfoBas
 };
 ```
 
-See the [`v8::PropertyCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/d7/dc5/classv8_1_1_property_callback_info.html) documentation for usage details on these. See [`Nan::ReturnValue`](#api_nan_return_value) for further information on how to set a return value from property accessor methods.
+查看 [`v8::PropertyCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/d7/dc5/classv8_1_1_property_callback_info.html) v8的官方文档来获取更多的详细信息. 查看 [`Nan::ReturnValue`](#api_nan_return_value) 来获取更详细的关于如何给Node扩展中涉及到的对象属性访问设置返回值的使用信息。
 
 <a name="api_nan_return_value"></a>
 ### Nan::ReturnValue
