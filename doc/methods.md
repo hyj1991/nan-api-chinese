@@ -3,9 +3,9 @@
 <a name="api_nan_function_callback_info"></a>
 ### Nan::FunctionCallbackInfo
 
-`Nan::FunctionCallbackInfo` should be used in place of [`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html), even with older versions of Node where `v8::FunctionCallbackInfo` does not exist.
+`Nan::FunctionCallbackInfo` 用于替换v8引擎原生的API：[`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html), 即使是在一些比较老的连 `v8::FunctionCallbackInfo` 都不存在的v8引擎版本中我们也必须替换使用。
 
-Definition:
+定义:
 
 ```c++
 template<typename T> class FunctionCallbackInfo {
@@ -22,7 +22,7 @@ template<typename T> class FunctionCallbackInfo {
 };
 ```
 
-See the [`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html) documentation for usage details on these. See [`Nan::ReturnValue`](#api_nan_return_value) for further information on how to set a return value from methods.
+可以看[`v8::FunctionCallbackInfo`](https://v8docs.nodesource.com/io.js-3.0/dd/d0d/classv8_1_1_function_callback_info.html) v8的官方文档 来获取更多的使用细节. 查看[`Nan::ReturnValue`](#api_nan_return_value) 来获取更多从如何在使用NAN编写C++插件中的函数返回数据给JS层的一些使用信息。
 
 <a name="api_nan_property_callback_info"></a>
 ### Nan::PropertyCallbackInfo
