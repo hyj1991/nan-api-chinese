@@ -17,9 +17,9 @@ Node编写C++扩展的Nan中文API文档，Nan是对于V8的一些API的二次�
 为了通过v8的模板将我们所需要的c++函数和数据结构暴露给JavaScript调用，我们必须提供一种能让v8引擎理解的形式来编写扩展代码。在NAN模块支持的一系列v8版本中，由引擎提供的原生JavaScript-accessible函数在不同的v8版本中差别非常大。在这种情况下，NAN模块将这些方法声明进行了二次抽象，对于开发者来说，NAN抽象后提供的API将非常接近最新版本的V8 API接口格式，但是对于老版本的API依旧做到了向后的兼容。
 
 * **方法参数类型**
- * [Nan::FunctionCallbackInfo]()
- * [Nan::PropertyCallbackInfo]()
- * [Nan::ReturnValue]()
+ * **[Nan::FunctionCallbackInfo]()**
+ * **[Nan::PropertyCallbackInfo]()**
+ * **[Nan::ReturnValue]()**
 * **方法声明** 
 
 
